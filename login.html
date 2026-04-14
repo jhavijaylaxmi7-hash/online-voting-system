@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Login</h1>
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <button onclick="sendOTP()">Send OTP</button>
+</div>
+
+<script>
+function sendOTP() {
+    let email = document.getElementById('email').value;
+
+    // 🔴 Empty check
+    if(email === "") {
+        alert("Please enter email");
+        return;
+    }
+
+    localStorage.setItem("email", email);
+
+    fetch('http://127.0.0.1:5000/send_otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("Your OTP is: " + data.otp);
+        window.location.href = "otp.html";
+    })
+    .catch(err => {
+        console.log(err);
+        alert("Server error! Backend check karo");
+    });
+}
+</script>
+
+</body>
+</html>

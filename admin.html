@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Admin Panel</h1>
+    <h3>Login</h3>
+
+    <input type="password" id="password" placeholder="Enter Admin Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<script>
+function login() {
+    let password = document.getElementById("password").value;
+
+    if(password === ""){
+        alert("Enter password");
+        return;
+    }
+
+    fetch('http://127.0.0.1:5000/admin_login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: password })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+
+        if(data.message === "Login successful"){
+            localStorage.setItem("admin", "true"); // session
+            window.location.href = "dashboard.html";
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        alert("Server error");
+    });
+}
+</script>
+
+</body>
+</html>

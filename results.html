@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Voting Results</h1>
+
+    <ul id="resultList"></ul>
+
+    <button onclick="goBack()">Back to Home</button>
+</div>
+
+<script>
+function loadResults() {
+    fetch('http://127.0.0.1:5000/results')
+.then(res => res.json())
+.then(data => {
+    let list = document.getElementById("resultList");
+    list.innerHTML = ""; // 🔥 clear old data
+
+    let entries = Object.entries(data);
+    let maxVotes = Math.max(...entries.map(x => x[1]));
+
+    entries.forEach(item => {
+        let li = document.createElement("li");
+
+        if(item[1] === maxVotes){
+            li.innerText = item[0] + " : " + item[1] + " votes 🏆";
+            li.style.color = "green";
+        } else {
+            li.innerText = item[0] + " : " + item[1] + " votes";
+        }
+
+        list.appendChild(li);
+    });
+})
+.catch(err => console.log(err));
+}
+
+// 🔥 Page load hote hi results show
+loadResults();
+
+function goBack() {
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
