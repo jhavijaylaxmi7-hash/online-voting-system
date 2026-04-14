@@ -17,12 +17,22 @@ A simple web-based voting system where users can vote for candidates.
 2. Run app.py
 3. Open index.html in browser
 
-## screenshots
-screenshots/login.png  
-screenshots/otp.png  
-screenshots/vote.png  
-screenshots/admin.png  
-screenshots/dashboard.png  
+# 📸 Screenshots
+
+## 🔐 Login Page
+![Login](screenshots/login.png)
+
+## 📩 OTP Verification
+![OTP](screenshots/otp.png)
+
+## 🗳️ Voting Page
+![Vote](screenshots/vote.png)
+
+## 👨‍💻 Admin Panel
+![Admin](screenshots/admin.png)
+
+## 📊 Dashboard Page
+![Dashboard](screenshots/dashboard.png)
 
 ## Author
 Vijaylaxmi
