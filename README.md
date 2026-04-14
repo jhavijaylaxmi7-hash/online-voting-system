@@ -17,5 +17,12 @@ A simple web-based voting system where users can vote for candidates.
 2. Run app.py
 3. Open index.html in browser
 
+## screenshots
+screenshots/login.png  
+screenshots/otp.png  
+screenshots/vote.png  
+screenshots/admin.png  
+screenshots/dashboard.png  
+
 ## Author
 Vijaylaxmi
