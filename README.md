@@ -20,19 +20,19 @@ A simple web-based voting system where users can vote for candidates.
 # 📸 Screenshots
 
 ## 🔐 Login Page
-![Login](screenshots/login.png)
+![Login](login.png)
 
 ## 📩 OTP Verification
-![OTP](screenshots/otp.png)
+![OTP](otp.png)
 
 ## 🗳️ Voting Page
-![Vote](screenshots/vote.png)
+![Vote](vote.png)
 
 ## 👨‍💻 Admin Panel
-![Admin](screenshots/admin.png)
+![Admin](admin.png)
 
 ## 📊 Dashboard Page
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](dashboard.png)
 
 ## Author
 Vijaylaxmi
